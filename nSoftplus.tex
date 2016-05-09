@@ -138,24 +138,31 @@ University of Manchester, M13 9PL, Manchester, United Kingdom\\
 \section{Introduction}
 Spiking Neural Network (SNN) has not achieved the recognition/classification performance of its non-spiking competitor, ANN.
 How to map a well trained ANN to SNN is a hot topic in this field, especially using spiking neurons of biological scale.
-\section{Related Works}
-How to map a well trained ANN to SNN.
+\section{Related Works:How to map a well trained ANN to SNN.}
+Theoretical analysis studies showed that, biologically plausible learning, e.g. Spike-Timing-Dependent Plasticity (STDP) could approximate a stochastic version of powerful learning algorithms in machine learning, such as Expectation Maximization~\cite{nessler2013bayesian}, Contrastive Divergence~\cite{neftci2013event}, Markov Chain Monte Carlo~\cite{buesing2011neural} and Gradient Descent~\cite{o2016deep}.
+The stochastic intrinsics come from the nature of the event-based spiking process which results in the harder learning mechanism comparing to the smoothly differentiable functions given by ANN.
+Practically, these models use neurons and synapses far from biological means, and it remains a unsolved problem to catch up the equivalent rate-based solutions.
+ 
+The offline training and mapping of an ANN to SNN, on the other hand, has reported 
+near-lossless conversions and state-of-the-art classification accuracies.
+This research aims to prove that SNNs are equally capable of pattern recognition comparing to their non-spiking rivals, and at the same time are more biologically realistic and energy-efficient.
+Jug and et. al.~\cite{Jug_etal_2012} firstly proposed the use of Siegert function to replace Sigmoid activation function in RBM (Restricted Boltzmann Machine) training.
+The Siegert units map incoming currents driven by Poisson spike trains to the response firing rate of a LIF (Leaky Integrate-and-Fire) neuron.
+The ratio of the spiking rate to its maximum ($1/\tau_ref$) is the equivalent probability of a sigmoid neuron.
+The loss of classification accuracy of the spiking DBN (Deep Belief Network)~\cite{o2013real} mainly lies in the different shape of the activation function.
+A recent research~\cite{hunsberger2015spiking} simplified the neuron response function of noisy incoming current, Siegert function, by smoothing the non-noisy current function.
+Using this Soft LIF response function in stead of ReLU (Rectified Linear Units) and trained with noisy input, the 4-layered spiking autoencoder reached 98.37\% accuracy on MNIST. 
+
+Even better performances~\cite{cao2015spiking,diehl2015fast} have been carried out in Spiking ConvNet (Convolutional Network), which employed simple integrate and fire neurons.
+The training only used ReLUs and zero bias to avoid negative outputs, and applied novel deep learning methods, for example: dropout, to increase the classification accuracy.
+Normalising the trained weights to SNN was relatively trivial and obtained the accuracy.
+The work has been extended to RNN (Recursive Nerual Network)~\cite{diehl2016conversion} and run on the neuromorphic hardware, TrueNorth~\cite{merolla2014million}.
+ 
+
 \section{Methods}
 This paper proposed a new biological inspired activation function, Noisy Softplus
 \begin{figure}[bt!]
 	\centering
-%	\subfloat[A snapshot of jAER playing the DVS recorded spikes.]{
-%		\label{Fig:jaer}
-%		\includegraphics[width=0.22\textwidth]{dvs-128}
-%	}
-%	\subfloat[A snapshot of jAER playing Poissonian spike trains.]{
-%		\label{Fig:poisson}
-%		\includegraphics[width=0.22\textwidth]{zero-28-2}
-%	}\\
-%	\subfloat[The raster plot of the Poissonian spike trains.]{
-%		\label{Fig:raster}
-%		\includegraphics[width=0.48\textwidth]{zero}
-%	}
 	\includegraphics[width=0.75\textwidth]{pic/1.pdf}
 	\caption{
 	Response function of the LIF neuron, whose parameters please see TABLE.
@@ -195,9 +202,9 @@ This paper proposed a new biological inspired activation function, Noisy Softplu
 	}
 	\\
 	\subfloat[Noisy Softplus in 3D]{
-			\label{Fig:3d}
-			\includegraphics[width=0.75\textwidth]{pic/5.pdf}
-			}
+		\label{Fig:3d}
+		\includegraphics[width=0.75\textwidth]{pic/5.pdf}
+	}
 	\caption{
 	Noisy Softplus mimics the response function of the LIF neuron.}
 \end{figure}
@@ -222,11 +229,11 @@ This paper proposed a new biological inspired activation function, Noisy Softplu
 	\\
 	\subfloat[Raster plot of spike trains of 10 input images.]{
 		\label{Fig:61}
-		\includegraphics[width=0.3\textwidth]{pic/6-1.png}
+		\includegraphics[width=0.5\textwidth]{pic/6-1.png}
 	}
 	\subfloat['Actiation function' in real application.]{
 		\label{Fig:65}
-		\includegraphics[width=0.3\textwidth]{pic/6-5.pdf}
+		\includegraphics[width=0.5\textwidth]{pic/6-5.pdf}
 	}
 	\caption{
 	Neural response activity in a CNN.}
