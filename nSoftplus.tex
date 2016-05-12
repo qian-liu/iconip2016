@@ -138,29 +138,49 @@ University of Manchester, M13 9PL, Manchester, United Kingdom\\
 \section{Introduction}
 Spiking Neural Network (SNN) has not achieved the recognition/classification performance of its non-spiking competitor, ANN.
 How to map a well trained ANN to SNN is a hot topic in this field, especially using spiking neurons of biological scale.
-\section{Related Works:How to map a well trained ANN to SNN.}
+\section{Related Works}
 Theoretical analysis studies showed that, biologically plausible learning, e.g. Spike-Timing-Dependent Plasticity (STDP) could approximate a stochastic version of powerful learning algorithms in machine learning, such as Expectation Maximization~\cite{nessler2013bayesian}, Contrastive Divergence~\cite{neftci2013event}, Markov Chain Monte Carlo~\cite{buesing2011neural} and Gradient Descent~\cite{o2016deep}.
 The stochastic intrinsics come from the nature of the event-based spiking process which results in the harder learning mechanism comparing to the smoothly differentiable functions given by ANN.
 Practically, these models use neurons and synapses far from biological means, and it remains a unsolved problem to catch up the equivalent rate-based solutions.
  
-The offline training and mapping of an ANN to SNN, on the other hand, has reported 
-near-lossless conversions and state-of-the-art classification accuracies.
+The offline training and mapping of an ANN to SNN, on the other hand, has reported near-lossless conversions and state-of-the-art classification accuracies.
 This research aims to prove that SNNs are equally capable of pattern recognition comparing to their non-spiking rivals, and at the same time are more biologically realistic and energy-efficient.
 Jug and et. al.~\cite{Jug_etal_2012} firstly proposed the use of Siegert function to replace Sigmoid activation function in RBM (Restricted Boltzmann Machine) training.
 The Siegert units map incoming currents driven by Poisson spike trains to the response firing rate of a LIF (Leaky Integrate-and-Fire) neuron.
 The ratio of the spiking rate to its maximum ($1/\tau_ref$) is the equivalent probability of a sigmoid neuron.
-The loss of classification accuracy of the spiking DBN (Deep Belief Network)~\cite{o2013real} mainly lies in the different shape of the activation function.
-A recent research~\cite{hunsberger2015spiking} simplified the neuron response function of noisy incoming current, Siegert function, by smoothing the non-noisy current function.
-Using this Soft LIF response function in stead of ReLU (Rectified Linear Units) and trained with noisy input, the 4-layered spiking autoencoder reached 98.37\% accuracy on MNIST. 
+A spiking DBN (Deep Belief Network)~\cite{o2013real} was implemented on neuromorphic hardware to recognise hand written digits in real time.
+However, cortical neurons seldom saturate their firing rate.
+Thus the ReLU (Rectified Linear Units) were proposed and outperformed other popular activation units thanks to its advantages of sparsity~\cite{glorot2011deep}.
+A recent research~\cite{hunsberger2015spiking} proposed this Soft LIF response function, which is equivalent to softplus activation~\cite{dugas2001incorporating}, instead of ReLU (Rectified Linear Units) and trained with noisy input, the 4-layered spiking autoencoder reached 98.37\% accuracy on MNIST. 
 
 Even better performances~\cite{cao2015spiking,diehl2015fast} have been carried out in Spiking ConvNet (Convolutional Network), which employed simple integrate and fire neurons.
 The training only used ReLUs and zero bias to avoid negative outputs, and applied novel deep learning methods, for example: dropout, to increase the classification accuracy.
-Normalising the trained weights to SNN was relatively trivial and obtained the accuracy.
+Normalising the trained weights to SNN was relatively trivial and maintained the accuracy.
 The work has been extended to RNN (Recursive Nerual Network)~\cite{diehl2016conversion} and run on the neuromorphic hardware, TrueNorth~\cite{merolla2014million}.
  
 
 \section{Methods}
-This paper proposed a new biological inspired activation function, Noisy Softplus
+As discussed above, most of the top scored networks map the ReLUs in ANN to 
+the equivalent spiking version of IF neurons.
+This paper proposed a new activation function, Noisy Softplus, which is inspired by the neuroscience observations of LIF neurons.
+The LIF neuron model follows the membrane potential dynamics:
+
+\begin{equation}
+\tau_m \frac{\D V}{\D t}=V_{rest} - V + R_{m} I_{syn}(t) ~~~,
+\label{eq:LIF}
+\end{equation}
+\subsection{Neural Science Background}
+The core idea of converting spiking neurons to activation units lies in the response function of a neuron model.
+Given a constant current injection $I$, the response function, i.e. firing rate, of the LIF neuron is:
+\begin{equation}
+\lambda_\mathit{out}=
+\left [ t_\mathit{ref}-\tau_m\log \left ( 1-\frac{V_{th}-V_\mathit{rest}}{IR_m}  \right )\right ]^{-1}
+\label{equ:consI}
+\end{equation}
+when $IR_m>V_{th}-V_{rest}$, otherwise the membrane potential cannot reach the threshold $V_{th}$ and the output firing rate is zero. 
+The absolute refractory period $t_\mathit{ref}$ is included, where all input during this period is invalid.
+The light blue curve in Fig.\ref{fig:physics} illustrates the response function of an LIF neuron, which inspired the propose of ReLUs.
+The parameters of the LIF neuron are all biologically valid, see the listed values in Table~\ref{tbl:pynnSetting}, and the same parameters are used throughout the paper.
 \begin{figure}[bt!]
 	\centering
 	\includegraphics[width=0.75\textwidth]{pic/1.pdf}
@@ -169,49 +189,121 @@ This paper proposed a new biological inspired activation function, Noisy Softplu
 	The neuron is driven by a noisy current with different standard deviations. }
 	\label{fig:physics}	
 \end{figure}
+\begin{table}[hbbp]
+	\centering
+	\caption{\label{tbl:pynnSetting}Parameter setting for the current-based LIF neurons using PyNN.}
+	\bgroup
+	\def\arraystretch{1.4}
+	\begin{tabular}{c c c}
+		%\hline
+		Parameters & Values & Units \\
+		\hline
+		cm & 0.25 & nF	\\
+		%\hline
+		tau\_m & 20.0 & ms\\
+		%\hline
+		tau\_refrac & 1.0 & ms\\
+		%\hline
+		tau\_syn\_E & 5.0 & ms\\
+		%  %\hline
+		tau\_syn\_I & 5.0 & ms\\
+		%  %\hline
+		v\_reset & -65.0 & mV\\
+		%\hline
+		v\_rest & -65.0 & mV\\
+		%\hline
+		v\_thresh & -50.0 & mV\\
+		%\hline
+		i\_offset & 0.1 & nA\\
+	\end{tabular}
+	\egroup
+\end{table}
+
+Practically, noisy current generated by arrival spike trains, rather than constant current, flows to the post-synaptic neurons.
+The response function~\cite{la2008response} of the LIF neuron to noisy current is following:
+\begin{equation}
+\lambda_\mathit{out}=
+\left [ t_\mathit{ref}+\tau_m \int_{\frac{V_\mathit{rest}-\mu \tau_m }{\sigma \sqrt{\tau_m}}}^{\frac{V_{th}-\mu \tau_m }{\sigma \sqrt{\tau_m}}} \sqrt{\pi} \exp(u^{2}) (1+erf(u)) \D u \right ]^{-1}
+\label{equ:noiseI}
+\end{equation}
+
+\subsection{LIF Neuron Simulation}
+To verify the response function, a simulation was carried out using PyNN~\cite{davison2008pynn} to compare with the analytical equations.
+A NoisyCurrentSource with particular set of $\mu$ and $\sigma$ was injected to a LIF neuron for 10~s.
+The firing rate was the average among 10 trials, see Fig.\ref{fig:lif_curr}.
+The slight difference comparing to the physical equation (dashed lines) came from the offset of the resting potential used in the equation.
+A noisy current can be generated by Poisson spike trains, assuming that large amount of small amplitude PSPs are required to reach the threshold and $\tau_m$ limits to 0.
+Two populations of LIF neurons containing 500 neurons each connected to a single neuron with excitatory and inhibitory projections. 
+Fig.~\ref{fig:lif_pois} shows the mean and variance of the firing rate tested with different $\tau_m$.
 
 \begin{figure}[bt!]
 	\centering
 	\includegraphics[width=0.75\textwidth]{pic/2.pdf}
 	\caption{
 	Recorded response firing rate of the LIF neuron.
-	The simulation is done using NoisyCurrentSource supported by PyNN and run on Nest.
+	The simulation is done using NoisyCurrentSource supported by PyNN and run on Nest~\cite{gewaltig2007nest}.
 	The neuron is driven by a noisy current with different standard deviations. }
 	\label{fig:lif_curr}	
 \end{figure}
 
 \begin{figure}[bt!]
 	\centering
-	\includegraphics[width=0.75\textwidth]{pic/3.pdf}
+	\subfloat[$\tau_m$ is 1~nA.]{
+		\label{Fig:lif_pois1}
+		\includegraphics[width=0.5\textwidth]{pic/3-1.pdf}
+	}
+	\subfloat[$\tau_m$ is 5~nA.]{
+		\label{Fig:lif_pois5}
+		\includegraphics[width=0.5\textwidth]{pic/3-2.pdf}
+	}
 	\caption{
 	Recorded response firing rate of the LIF neuron.
 	The driving noisy current is simulated with Poission spike trains.}
 	\label{fig:lif_pois}	
 \end{figure}
 
-
+\subsection{Noisy Softplus}
+Inspired by the set of response functions triggered by different level of noise, noisy softplus, see Fig.\ref{fig:nsp}, function is proposed:
+\begin{equation}
+y = k \sigma [\log (1 + \exp(x/k \sigma))],
+\label{equ:nsp}
+\end{equation}
+where $x$ refers to the mean current, $y$ is the output firing rate, $\sigma$ plays important role to define the noise level, and $k$ allows control of the scaling of the curve. 
+The noisy softplus well fitted to the response function of the LIF neuron (Fig.\ref{Fig:scale}).
+Note that, the novel activation function we propose contains two parameter, the current and its noise, which are naturally obtained in spiking neurons.
+Fig.\ref{Fig:3d} shows the 3D plot of the function.
 \begin{figure}[bt!]
 	\centering
-	\subfloat[Noisy Softplus $y=a*\log(1+\exp(bx))$.]{
-		\label{Fig:sp}
-		\includegraphics[width=0.5\textwidth]{pic/4.pdf}
-	}
+%	\subfloat[Noisy Softplus.]{
+%		\label{Fig:sp}
+%		\includegraphics[width=0.5\textwidth]{pic/4.pdf}
+%	}
 	\subfloat[Noisy Softplus compares real neuron]{
 		\label{Fig:scale}
 		\includegraphics[width=0.5\textwidth]{pic/4-2.pdf}
 	}
-	\\
 	\subfloat[Noisy Softplus in 3D]{
 		\label{Fig:3d}
-		\includegraphics[width=0.75\textwidth]{pic/5.pdf}
+		\includegraphics[width=0.5\textwidth]{pic/5.pdf}
 	}
 	\caption{
 	Noisy Softplus mimics the response function of the LIF neuron.}
+	\label{fig:nsp}
 \end{figure}
 
 
 
 \section{Results}
+A SNN model is trained using noisy softplus neurons.
+The derivative function is the logistic function scaled by $k\sigma$:
+\begin{equation}
+y = \exp(\frac{k\sigma x}{1 + k\sigma x}).
+\label{equ:logist}
+\end{equation}
+The architecture is a 28x28-6c5-2s-12c5-2s-10o ConvNet, which is trained with MNIST for 10 epochs.
+Fig.~\ref{fig:cnn} shows a convolution of 5x5 kernel with an input image represented by spiking trains.
+The estimated spike counts are well fitted to the real recorded firing rate.
+Fig.~\ref{fig:training} shows the test of 10 digits which were correctively recognised by the Convnet. 
 \begin{figure}[bt!]
 	\centering
 	\subfloat[Firing rate represents the input figure.]{
@@ -237,6 +329,7 @@ This paper proposed a new biological inspired activation function, Noisy Softplu
 	}
 	\caption{
 	Neural response activity in a CNN.}
+	\label{fig:cnn}
 \end{figure}
 
 \begin{figure}[bt!]
@@ -247,6 +340,10 @@ This paper proposed a new biological inspired activation function, Noisy Softplu
 	\label{fig:result}	
 \end{figure}
 
+
+We compared the training among ReLU, softplus, and noisy softplus on their loss during training averaged of 6 trials, see Fig.{fig:training}.
+The trained networks were scaled to SNNs and compared on recognition rate.
+They are 93.34\%, 96.43\% and 97.03\% on LIF SNNs.
 \begin{figure}[bt!]
 	\centering
 	\includegraphics[width=0.75\textwidth]{pic/8.pdf}
