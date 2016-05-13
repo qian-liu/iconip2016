@@ -30,6 +30,7 @@
 %\usepackage{amsmath}
 \usepackage{url}
 
+
 \urldef{\mailsa}\path|{alfred.hofmann, ursula.barth, ingrid.haas, frank.holzwarth,|
 \urldef{\mailsb}\path|anna.kramer, leonie.kunz, christine.reiss, nicole.sator,|
 \urldef{\mailsc}\path|erika.siebert-cole, peter.strasser, lncs}@springer.com|    
@@ -128,21 +129,26 @@ University of Manchester, M13 9PL, Manchester, United Kingdom\\
 
 
 \begin{abstract}
-  Spiking Neural Network (SNN) has not achieved the recognition/classification performance of its non-spiking competitor, ANN.
+  Spiking Neural Network (SNN) has not achieved the recognition/classification performance of its non-spiking competitor, ANN (Artificial Neural Network) particularly the deep neural networks.
   How to map a well trained ANN to SNN is a hot topic in this field, especially using spiking neurons of biological scale.
-  This paper proposed a new biological inspired activation function, Noisy Softplus, which accurately maps the trained ANN to spiking neurons while keeping a close recognition performance.
-  This research verifies the recognition ability of SNNs and proceeds the study on event-based, parallel, low-cost neural processing. 
-\keywords{Noisy Softplus, biological-inspired, Spiking Neural Network, activation function}
+  This paper proposed a new biological inspired activation function, Noisy Softplus, which is well fitted to the response function of LIF (Leaky Integrate-and-Fire) neurons.
+  A convolutional network (ConvNet) was trained on MNIST with Noisy Softplus units and converted to an SNN while keeping a close classification accuracy.
+  This research verifies the equivalent recognition ability of the more biologically realistic SNNs and brings biological features to the activation units in ANNs.
+\keywords{Noisy Softplus, biological-inspired, Spiking Neural Network, activation function, LIF neurons}
 \end{abstract}
 
 \section{Introduction}
-Spiking Neural Network (SNN) has not achieved the recognition/classification performance of its non-spiking competitor, ANN.
-How to map a well trained ANN to SNN is a hot topic in this field, especially using spiking neurons of biological scale.
-\section{Related Works}
+%Spiking Neural Network (SNN) has not achieved the recognition/classification performance of its non-spiking competitor, ANN.
+
+Deep Neural Networks (DNNs) are the most promising research field in computer vision, which has even outperformed human-level performance on image classification~\cite{he2015delving}.
+To investigate whether brains work similarly on vision tasks, these powerful DNN models have been moved to spiking neural networks (SNNs).
+Moreover, the spiking DNN has great potential to build neuromorphic systems combining remarkable performance with energy-efficient training and operation.
+
 Theoretical analysis studies showed that, biologically plausible learning, e.g. Spike-Timing-Dependent Plasticity (STDP) could approximate a stochastic version of powerful learning algorithms in machine learning, such as Expectation Maximization~\cite{nessler2013bayesian}, Contrastive Divergence~\cite{neftci2013event}, Markov Chain Monte Carlo~\cite{buesing2011neural} and Gradient Descent~\cite{o2016deep}.
-The stochastic intrinsics come from the nature of the event-based spiking process which results in the harder learning mechanism comparing to the smoothly differentiable functions given by ANN.
+The stochastic intrinsics, rather than continuously differentiable functions given by ANN, are the nature of the event-based spiking process which results in a difficult problem of network training.
 Practically, these models use neurons and synapses far from biological means, and it remains a unsolved problem to catch up the equivalent rate-based solutions.
  
+%How to map a well trained ANN to SNN is a hot topic in this field, especially using spiking neurons of biological scale.
 The offline training and mapping of an ANN to SNN, on the other hand, has reported near-lossless conversions and state-of-the-art classification accuracies.
 This research aims to prove that SNNs are equally capable of pattern recognition comparing to their non-spiking rivals, and at the same time are more biologically realistic and energy-efficient.
 Jug and et. al.~\cite{Jug_etal_2012} firstly proposed the use of Siegert function to replace Sigmoid activation function in RBM (Restricted Boltzmann Machine) training.
@@ -150,26 +156,27 @@ The Siegert units map incoming currents driven by Poisson spike trains to the re
 The ratio of the spiking rate to its maximum ($1/\tau_ref$) is the equivalent probability of a sigmoid neuron.
 A spiking DBN (Deep Belief Network)~\cite{o2013real} was implemented on neuromorphic hardware to recognise hand written digits in real time.
 However, cortical neurons seldom saturate their firing rate.
-Thus the ReLU (Rectified Linear Units) were proposed and outperformed other popular activation units thanks to its advantages of sparsity~\cite{glorot2011deep}.
-A recent research~\cite{hunsberger2015spiking} proposed this Soft LIF response function, which is equivalent to softplus activation~\cite{dugas2001incorporating}, instead of ReLU (Rectified Linear Units) and trained with noisy input, the 4-layered spiking autoencoder reached 98.37\% accuracy on MNIST. 
+Thus the ReLU (Rectified Linear Units) were proposed and surpassed other popular activation units thanks to its advantages of sparsity~\cite{glorot2011deep}.
+A recent research~\cite{hunsberger2015spiking} proposed the Soft LIF response function, which is equivalent to Softplus activation~\cite{dugas2001incorporating}.
+%trained with noisy input, the 4-layered spiking autoencoder reached 98.37\% accuracy on MNIST. 
 
-Even better performances~\cite{cao2015spiking,diehl2015fast} have been carried out in Spiking ConvNet (Convolutional Network), which employed simple integrate and fire neurons.
-The training only used ReLUs and zero bias to avoid negative outputs, and applied novel deep learning methods, for example: dropout, to increase the classification accuracy.
+Even better performances~\cite{cao2015spiking,diehl2015fast} have been carried out in Spiking ConvNet (Convolutional Network), but it employed simple integrate and fire neurons.
+The training only used ReLUs and zero bias to avoid negative outputs, and applied novel deep learning methods, dropout, to increase the classification accuracy.
 Normalising the trained weights to SNN was relatively trivial and maintained the accuracy.
 The work has been extended to RNN (Recursive Nerual Network)~\cite{diehl2016conversion} and run on the neuromorphic hardware, TrueNorth~\cite{merolla2014million}.
  
-
+The Noisy Softplus activation function is based on LIF neurons of biological means, which is the first attempt to accurately mapping spiking neural response to activation unit of ANNs.
+The classification accuracy was tested on a spiking ConvNet and the performance kept close to the original ConvNet and was better than using softplus.
+This study brings biological features, noise, to activation units of ANN in hope of promoting research into noise based computation.
 \section{Methods}
-As discussed above, most of the top scored networks map the ReLUs in ANN to 
-the equivalent spiking version of IF neurons.
+\subsection{Neural Science Background}
+%As discussed above, most of the top scored networks map the ReLUs in ANN to the equivalent spiking version of IF neurons.
 This paper proposed a new activation function, Noisy Softplus, which is inspired by the neuroscience observations of LIF neurons.
 The LIF neuron model follows the membrane potential dynamics:
-
 \begin{equation}
 \tau_m \frac{\D V}{\D t}=V_{rest} - V + R_{m} I_{syn}(t) ~~~,
 \label{eq:LIF}
 \end{equation}
-\subsection{Neural Science Background}
 The core idea of converting spiking neurons to activation units lies in the response function of a neuron model.
 Given a constant current injection $I$, the response function, i.e. firing rate, of the LIF neuron is:
 \begin{equation}
@@ -181,13 +188,25 @@ when $IR_m>V_{th}-V_{rest}$, otherwise the membrane potential cannot reach the t
 The absolute refractory period $t_\mathit{ref}$ is included, where all input during this period is invalid.
 The light blue curve in Fig.\ref{fig:physics} illustrates the response function of an LIF neuron, which inspired the propose of ReLUs.
 The parameters of the LIF neuron are all biologically valid, see the listed values in Table~\ref{tbl:pynnSetting}, and the same parameters are used throughout the paper.
+
 \begin{figure}[bt!]
 	\centering
-	\includegraphics[width=0.75\textwidth]{pic/1.pdf}
+	\subfloat[Physics analysis.]{
+		\label{Fig:physics}
+		\includegraphics[width=0.5\textwidth]{pic/1.pdf}
+	}
+	\subfloat[Recorded response firing rate.
+%	 of the LIF neuron.
+%		The simulation is done using NoisyCurrentSource supported by PyNN and run on Nest~\cite{gewaltig2007nest}.
+%		The neuron is driven by a noisy current with different standard deviations. 
+		]{
+		\label{Fig:lif_curr}
+		\includegraphics[width=0.5\textwidth]{pic/2.pdf}
+	}
 	\caption{
 	Response function of the LIF neuron, whose parameters please see TABLE.
 	The neuron is driven by a noisy current with different standard deviations. }
-	\label{fig:physics}	
+	\label{fig:firefunc}	
 \end{figure}
 \begin{table}[hbbp]
 	\centering
@@ -236,15 +255,7 @@ A noisy current can be generated by Poisson spike trains, assuming that large am
 Two populations of LIF neurons containing 500 neurons each connected to a single neuron with excitatory and inhibitory projections. 
 Fig.~\ref{fig:lif_pois} shows the mean and variance of the firing rate tested with different $\tau_m$.
 
-\begin{figure}[bt!]
-	\centering
-	\includegraphics[width=0.75\textwidth]{pic/2.pdf}
-	\caption{
-	Recorded response firing rate of the LIF neuron.
-	The simulation is done using NoisyCurrentSource supported by PyNN and run on Nest~\cite{gewaltig2007nest}.
-	The neuron is driven by a noisy current with different standard deviations. }
-	\label{fig:lif_curr}	
-\end{figure}
+
 
 \begin{figure}[bt!]
 	\centering
@@ -278,6 +289,15 @@ Fig.\ref{Fig:3d} shows the 3D plot of the function.
 %		\label{Fig:sp}
 %		\includegraphics[width=0.5\textwidth]{pic/4.pdf}
 %	}
+	\subfloat[Noisy Softplus]{
+		\label{Fig:nsp}
+		\includegraphics[width=0.5\textwidth]{pic/4.pdf}
+	}
+	\subfloat[Noisy Softplus compares real neuron]{
+		\label{Fig:nsptau1}
+		\includegraphics[width=0.5\textwidth]{pic/4-1.pdf}
+	}
+	\\
 	\subfloat[Noisy Softplus compares real neuron]{
 		\label{Fig:scale}
 		\includegraphics[width=0.5\textwidth]{pic/4-2.pdf}
@@ -334,7 +354,7 @@ Fig.~\ref{fig:training} shows the test of 10 digits which were correctively reco
 
 \begin{figure}[bt!]
 	\centering
-	\includegraphics[height=0.3\textwidth]{pic/7.pdf}
+	\includegraphics[height=0.5\textwidth]{pic/7.pdf}
 	\caption{
 	Recorded firing rate of decision neurons in the CNN.}
 	\label{fig:result}	
@@ -346,14 +366,38 @@ The trained networks were scaled to SNNs and compared on recognition rate.
 They are 93.34\%, 96.43\% and 97.03\% on LIF SNNs.
 \begin{figure}[bt!]
 	\centering
-	\includegraphics[width=0.75\textwidth]{pic/8.pdf}
+	\subfloat[Loss over training.]{
+		\label{Fig:loss}
+		\includegraphics[width=0.5\textwidth]{pic/8.pdf}
+	}
+	\subfloat[Classification accuracy varies over time.]{
+		\label{Fig:response}
+		\includegraphics[width=0.5\textwidth]{pic/9.pdf}
+	}
 	\caption{
-	Training of Noisy Softplus in CNN.}
+	Analysis of training and testing of Noisy Softplus in CNN.}
 	\label{fig:training}	
 \end{figure}
 
+%\begin{figure}[bt!]
+%	\centering
+%	\includegraphics[width=0.75\textwidth]{pic/9.pdf}
+%	\caption{
+%	Classification accuracy varies over time.}
+%	\label{fig:response}	
+%\end{figure}
 Noisy Softplus accurately maps the trained ANN to spiking neurons while keeping a close recognition performance.
 \section{Discussion}
+The biologically inspired activation function includes noise as the second dimension which is the first attempt to accurately map action units to response function of LIF neuron.
+Noisy Softplus wins on the accuracy over sigmoid neuron, and it is verified comparing to Siegert neuron.
+With more accurate mapping, Noisy Softplus outperforms to Softplus units in the experiments.
+Although the spiking Convnet is still behind state-of-the-art model using IF neuron, working on more biological realistic neuron model is one step further to understand the how brains work.
+
+In future work of SNNs, constraints during training will be included to limit the function within the active range, which is equivalent to a LIF neuron firing beneath a certain rate.
+Thus the scaling process after training will be not needed.
+To increase the accuracy of mapping, the scale factor $k$ should be (numerically) solved to avoid calibration.
+In terms of ANNs, the noise as extra information gathered by Softplus activation can be studied to enhance classification.
+
 
 \section*{Acknowledgments}
 
