@@ -131,7 +131,7 @@
 		The mapping of a well-trained ANN to an SNN is a hot topic in this field, especially using spiking neurons with biological characteristics.
 		This paper proposes a new biologically-inspired activation function, Noisy Softplus, which is well-matched to the response function of LIF (Leaky Integrate-and-Fire) neurons.
 		A convolutional network (ConvNet) was trained on the MNIST database with Noisy Softplus units and converted to an SNN while maintaining a close classification accuracy.
-		This results demonstrate the equivalent recognition capability of the more biologically-realistic SNNs and bring biological features to the activation units in ANNs.
+		This result demonstrates the equivalent recognition capability of the more biologically-realistic SNNs and bring biological features to the activation units in ANNs.
 		\keywords{Noisy Softplus, biologically-inspired, Spiking Neural Network, activation function, LIF neurons}
 	\end{abstract}
 	
@@ -152,9 +152,9 @@
 	
 	%How to map a well trained ANN to SNN is a hot topic in this field, especially using spiking neurons of biological scale.
 	
-	On the other hand, the offline training an ANN which is then mapped to an SNN, has shown near loss-less conversion and state-of-the-art classification accuracy.
+	On the other hand, the offline training of an ANN, which is then mapped to an SNN, has shown near loss-less conversion and state-of-the-art classification accuracy.
 	This research aims to prove that SNNs are equally capable as their non-spiking rivals of pattern recognition, and at the same time are more biologically realistic and energy-efficient.
-	Jug and et. al.~\cite{Jug_etal_2012} first proposed the use of the Siegert function to replace the sigmoid activation function in Restricted Boltzmann Machine (RBM) training.
+	Jug et. al.~\cite{Jug_etal_2012} first proposed the use of the Siegert function to replace the sigmoid activation function in Restricted Boltzmann Machine (RBM) training.
 	The Siegert units map incoming currents driven by Poisson spike trains to the response firing rate of a Leaky Integrate-and-Fire (LIF) neuron.
 	The ratio of the spiking rate to its maximum is equivalent to the output of a sigmoid neuron.
 	A spiking Deep Belief Network (DBN)~\cite{Stromatias2015scalable} was implemented on neuromorphic hardware, SpiNNaker~\cite{furber2014spinnaker}, to recognise hand written digits in real time.
@@ -179,7 +179,7 @@
 	This paper proposes a new activation function, Noisy Softplus, which is inspired by neuroscience observations of LIF neurons.
 	The LIF neuron model follows the following membrane potential dynamics:
 	\begin{equation}
-	\tau_m \frac{\D V}{\D t}=V_{rest} - V + R_{m} I(t) ~.
+	\tau_m \frac{\D V}{\D t}=V - V_{rest} + R_{m} I(t) ~.
 	\label{eq:LIF}
 	\end{equation}
 	The membrane potential $V$ changes in response to the input current $I$, starting at the resting membrane potential $V_{rest}$, where the membrane time constant is $\tau_m = R_mC_m$, $R_m$ is the membrane resistance and $C_m$ is the membrane capacitance.

@@ -1,0 +1,518 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.3.7)  26 JUL 2016 09:06
+entering extended mode
+**paper379.tex
+(E:\LQ\git\iconip2016\paper379\paper379.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+(E:\LQ\git\iconip2016\paper379\llncs.cls
+Document Class: llncs 2014/03/31 v2.19 
+ LaTeX document class for Lecture Notes in Computer Science
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\multicol.sty"
+Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
+\c@tracingmulticols=\count87
+\mult@box=\box26
+\multicol@leftmargin=\dimen103
+\c@unbalance=\count88
+\c@collectmore=\count89
+\doublecol@number=\count90
+\multicoltolerance=\count91
+\multicolpretolerance=\count92
+\full@width=\dimen104
+\page@free=\dimen105
+\premulticols=\dimen106
+\postmulticols=\dimen107
+\multicolsep=\skip43
+\multicolbaselineskip=\skip44
+\partial@page=\box27
+\last@line=\box28
+\mult@rightbox=\box29
+\mult@grightbox=\box30
+\mult@gfirstbox=\box31
+\mult@firstbox=\box32
+\@tempa=\box33
+\@tempa=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\c@columnbadness=\count93
+\c@finalcolumnbadness=\count94
+\last@try=\dimen108
+\multicolovershoot=\dimen109
+\multicolundershoot=\dimen110
+\mult@nat@firstbox=\box50
+\colbreak@box=\box51
+\multicol@sort@counter=\count95
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\aliascnt.sty"
+Package: aliascnt 2009/09/08 v1.3 Alias counters (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\carlisle\remreset.sty"))
+\c@chapter=\count96
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 362.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 363.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 364.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 365.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 366.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 367.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 368.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 369.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 370.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 371.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 372.
+\tocchpnum=\dimen111
+\tocsecnum=\dimen112
+\tocsectotal=\dimen113
+\tocsubsecnum=\dimen114
+\tocsubsectotal=\dimen115
+\tocsubsubsecnum=\dimen116
+\tocsubsubsectotal=\dimen117
+\tocparanum=\dimen118
+\tocparatotal=\dimen119
+\tocsubparanum=\dimen120
+\@tempcntc=\count97
+\fnindent=\dimen121
+\c@@inst=\count98
+\c@@auth=\count99
+\c@auco=\count100
+\instindent=\dimen122
+\authrun=\box52
+\authorrunning=\toks14
+\tocauthor=\toks15
+\titrun=\box53
+\titlerunning=\toks16
+\toctitle=\toks17
+\c@theorem=\count101
+\c@case=\count102
+\c@conjecture=\count103
+\c@corollary=\count104
+\c@definition=\count105
+\c@example=\count106
+\c@exercise=\count107
+\c@lemma=\count108
+\c@note=\count109
+\c@problem=\count110
+\c@property=\count111
+\c@proposition=\count112
+\c@question=\count113
+\c@solution=\count114
+\c@remark=\count115
+\headlineindent=\dimen123
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks18
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count116
+))
+\Gin@req@height=\dimen124
+\Gin@req@width=\dimen125
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\subfig\subfig.sty"
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen126
+\captionmargin@=\dimen127
+\captionwidth=\dimen128
+\caption@tempdima=\dimen129
+\caption@indent=\dimen130
+\caption@parindent=\dimen131
+\caption@hangindent=\dimen132
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2->\small \vskip \abovecap
+tionskip \sbox \@tempboxa {{\bfseries #1.} #2}\ifdim \wd \@tempboxa >\hsize {\b
+fseries #1.} #2\par \else \global \@minipagefalse \hb@xt@ \hsize {\hfil \box \@
+tempboxa \hfil }\fi \vskip \belowcaptionskip .
+\c@ContinuedFloat=\count117
+)
+\c@KVtest=\count118
+\sf@farskip=\skip45
+\sf@captopadj=\dimen133
+\sf@capskip=\skip46
+\sf@nearskip=\skip47
+\c@subfigure=\count119
+\c@subfigure@save=\count120
+\c@lofdepth=\count121
+\c@subtable=\count122
+\c@subtable@save=\count123
+\c@lotdepth=\count124
+\sf@top=\skip48
+\sf@bottom=\skip49
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\algorithms\algorithm.sty"
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count125
+\float@exts=\toks20
+\float@box=\box54
+\@float@everytoks=\toks21
+\@floatcapt=\box55
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks22
+\c@algorithm=\count126
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\algorithmicx\algpseudocode.sty"
+Package: algpseudocode 
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\algorithmicx\algorithmicx.sty"
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count127
+\c@ALG@rem=\count128
+\c@ALG@nested=\count129
+\ALG@tlm=\skip50
+\ALG@thistlm=\skip51
+\c@ALG@Lnr=\count130
+\c@ALG@blocknr=\count131
+\c@ALG@storecount=\count132
+\c@ALG@tmpcounter=\count133
+\ALG@tmplength=\skip52
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\mdwtools\footnote.sty"
+Package: footnote 1997/01/28 1.13 Save footnotes around boxes
+\fn@notes=\box56
+\fn@width=\dimen134
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+\bigstrutjot=\dimen135
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(E:\LQ\git\iconip2016\paper379\paper379.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count134
+\scratchdimen=\dimen136
+\scratchbox=\box57
+\nofMPsegments=\count135
+\nofMParguments=\count136
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count137
+\MPscratchDim=\dimen137
+\MPnumerator=\count138
+\makeMPintoPDFobject=\count139
+\everyMPtoPDFconversion=\toks24
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for U+msa on input line 126.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 126.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Overfull \hbox (0.65485pt too wide) in paragraph at lines 145--152
+[]\OT1/cmr/m/n/10 Theoretical stud-ies have shown that biologically-plausible l
+earn-ing, e.g. Spike-
+ []
+
+[1
+
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+<pic/1.pdf, id=16, 433.62pt x 289.08pt>
+File: pic/1.pdf Graphic file (type pdf)
+ <use pic/1.pdf>
+Package pdftex.def Info: pic/1.pdf used on input line 212.
+(pdftex.def)             Requested size: 173.56177pt x 115.70934pt.
+
+<pic/2.pdf, id=17, 433.62pt x 289.08pt>
+File: pic/2.pdf Graphic file (type pdf)
+ <use pic/2.pdf>
+Package pdftex.def Info: pic/2.pdf used on input line 220.
+(pdftex.def)             Requested size: 173.56177pt x 115.70934pt.
+
+Overfull \hbox (15.41656pt too wide) in paragraph at lines 212--223
+ [][][] 
+ []
+
+[3 <E:/LQ/git/iconip2016/paper379/pic/1.pdf> <E:/LQ/git/iconip2016/paper379/pic
+/2.pdf
+
+pdfTeX warning: pdflatex.exe (file E:/LQ/git/iconip2016/paper379/pic/2.pdf): PD
+F inclusion: multiple pdfs with page group included in a single page
+>] <pic/3-1.pdf, id=110, 433.62pt x 289.08pt>
+File: pic/3-1.pdf Graphic file (type pdf)
+ <use pic/3-1.pdf>
+Package pdftex.def Info: pic/3-1.pdf used on input line 287.
+(pdftex.def)             Requested size: 173.56177pt x 115.70934pt.
+
+<pic/3-2.pdf, id=111, 433.62pt x 289.08pt>
+File: pic/3-2.pdf Graphic file (type pdf)
+ <use pic/3-2.pdf>
+Package pdftex.def Info: pic/3-2.pdf used on input line 291.
+(pdftex.def)             Requested size: 173.56177pt x 115.70934pt.
+
+Overfull \hbox (12.33325pt too wide) in paragraph at lines 287--294
+ [][][] 
+ []
+
+<pic/4.pdf, id=112, 433.62pt x 289.08pt>
+File: pic/4.pdf Graphic file (type pdf)
+ <use pic/4.pdf>
+Package pdftex.def Info: pic/4.pdf used on input line 307.
+(pdftex.def)             Requested size: 173.56177pt x 115.70934pt.
+
+<pic/5.pdf, id=113, 296.10625pt x 194.7275pt>
+File: pic/5.pdf Graphic file (type pdf)
+ <use pic/5.pdf>
+Package pdftex.def Info: pic/5.pdf used on input line 311.
+(pdftex.def)             Requested size: 156.20453pt x 102.72668pt.
+
+<pic/4-1.pdf, id=114, 433.62pt x 289.08pt>
+File: pic/4-1.pdf Graphic file (type pdf)
+ <use pic/4-1.pdf>
+Package pdftex.def Info: pic/4-1.pdf used on input line 315.
+(pdftex.def)             Requested size: 173.56177pt x 115.70934pt.
+
+<pic/4-2.pdf, id=115, 433.62pt x 289.08pt>
+File: pic/4-2.pdf Graphic file (type pdf)
+ <use pic/4-2.pdf>
+Package pdftex.def Info: pic/4-2.pdf used on input line 319.
+(pdftex.def)             Requested size: 173.56177pt x 115.70934pt.
+
+Overfull \hbox (12.33325pt too wide) in paragraph at lines 315--323
+ [][][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4 <E:/LQ/git/iconip2016/paper379/pic/3-1.pdf> <E:/LQ/git/iconip2016/paper379/
+pic/3-2.pdf
+
+pdfTeX warning: pdflatex.exe (file E:/LQ/git/iconip2016/paper379/pic/3-2.pdf): 
+PDF inclusion: multiple pdfs with page group included in a single page
+>] <pic/6-2.pdf, id=216, 361.35pt x 361.35pt>
+File: pic/6-2.pdf Graphic file (type pdf)
+ <use pic/6-2.pdf>
+Package pdftex.def Info: pic/6-2.pdf used on input line 349.
+(pdftex.def)             Requested size: 104.1381pt x 104.13818pt.
+
+<pic/6-3.pdf, id=217, 361.35pt x 361.35pt>
+File: pic/6-3.pdf Graphic file (type pdf)
+ <use pic/6-3.pdf>
+Package pdftex.def Info: pic/6-3.pdf used on input line 353.
+(pdftex.def)             Requested size: 104.1381pt x 104.13818pt.
+
+<pic/6-4.pdf, id=218, 361.35pt x 361.35pt>
+File: pic/6-4.pdf Graphic file (type pdf)
+ <use pic/6-4.pdf>
+Package pdftex.def Info: pic/6-4.pdf used on input line 357.
+(pdftex.def)             Requested size: 104.1381pt x 104.13818pt.
+
+<pic/6-1.png, id=219, 433.62pt x 289.08pt>
+File: pic/6-1.png Graphic file (type png)
+ <use pic/6-1.png>
+Package pdftex.def Info: pic/6-1.png used on input line 362.
+(pdftex.def)             Requested size: 173.56177pt x 115.70934pt.
+
+<pic/6-5.pdf, id=221, 433.62pt x 289.08pt>
+File: pic/6-5.pdf Graphic file (type pdf)
+ <use pic/6-5.pdf>
+Package pdftex.def Info: pic/6-5.pdf used on input line 366.
+(pdftex.def)             Requested size: 173.56177pt x 115.70934pt.
+
+Overfull \hbox (12.33325pt too wide) in paragraph at lines 362--371
+ [][][] 
+ []
+
+[5 <E:/LQ/git/iconip2016/paper379/pic/4.pdf> <E:/LQ/git/iconip2016/paper379/pic
+/5.pdf
+
+pdfTeX warning: pdflatex.exe (file E:/LQ/git/iconip2016/paper379/pic/5.pdf): PD
+F inclusion: multiple pdfs with page group included in a single page
+> <E:/LQ/git/iconip2016/paper379/pic/4-1.pdf
+
+pdfTeX warning: pdflatex.exe (file E:/LQ/git/iconip2016/paper379/pic/4-1.pdf): 
+PDF inclusion: multiple pdfs with page group included in a single page
+> <E:/LQ/git/iconip2016/paper379/pic/4-2.pdf
+
+pdfTeX warning: pdflatex.exe (file E:/LQ/git/iconip2016/paper379/pic/4-2.pdf): 
+PDF inclusion: multiple pdfs with page group included in a single page
+>] [6 <E:/LQ/git/iconip2016/paper379/pic/6-2.pdf> <E:/LQ/git/iconip2016/paper37
+9/pic/6-3.pdf
+
+pdfTeX warning: pdflatex.exe (file E:/LQ/git/iconip2016/paper379/pic/6-3.pdf): 
+PDF inclusion: multiple pdfs with page group included in a single page
+> <E:/LQ/git/iconip2016/paper379/pic/6-4.pdf
+
+pdfTeX warning: pdflatex.exe (file E:/LQ/git/iconip2016/paper379/pic/6-4.pdf): 
+PDF inclusion: multiple pdfs with page group included in a single page
+> <E:/LQ/git/iconip2016/paper379/pic/6-1.png> <E:/LQ/git/iconip2016/paper379/pi
+c/6-5.pdf
+
+pdfTeX warning: pdflatex.exe (file E:/LQ/git/iconip2016/paper379/pic/6-5.pdf): 
+PDF inclusion: multiple pdfs with page group included in a single page
+>] <pic/7.pdf, id=1308, 281.05pt x 227.85126pt>
+File: pic/7.pdf Graphic file (type pdf)
+ <use pic/7.pdf>
+Package pdftex.def Info: pic/7.pdf used on input line 402.
+(pdftex.def)             Requested size: 90.2502pt x 73.16768pt.
+
+<pic/8.pdf, id=1309, 433.62pt x 289.08pt>
+File: pic/8.pdf Graphic file (type pdf)
+ <use pic/8.pdf>
+Package pdftex.def Info: pic/8.pdf used on input line 406.
+(pdftex.def)             Requested size: 121.49535pt x 80.99477pt.
+
+<pic/9.pdf, id=1310, 433.62pt x 289.08pt>
+File: pic/9.pdf Graphic file (type pdf)
+ <use pic/9.pdf>
+Package pdftex.def Info: pic/9.pdf used on input line 410.
+(pdftex.def)             Requested size: 121.49535pt x 80.99477pt.
+
+Overfull \hbox (4.61723pt too wide) in paragraph at lines 402--414
+ [][][][] 
+ []
+
+(E:\LQ\git\iconip2016\paper379\paper379.bbl [7 <E:/LQ/git/iconip2016/paper379/p
+ic/7.pdf> <E:/LQ/git/iconip2016/paper379/pic/8.pdf
+
+pdfTeX warning: pdflatex.exe (file E:/LQ/git/iconip2016/paper379/pic/8.pdf): PD
+F inclusion: multiple pdfs with page group included in a single page
+> <E:/LQ/git/iconip2016/paper379/pic/9.pdf
+
+pdfTeX warning: pdflatex.exe (file E:/LQ/git/iconip2016/paper379/pic/9.pdf): PD
+F inclusion: multiple pdfs with page group included in a single page
+>]) [8] (E:\LQ\git\iconip2016\paper379\paper379.aux) ) 
+Here is how much of TeX's memory you used:
+ 3921 strings out of 493921
+ 56825 string characters out of 3147283
+ 119548 words of memory out of 3000000
+ 7160 multiletter control sequences out of 15000+200000
+ 12005 words of font info for 45 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 44i,10n,52p,468b,397s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmbx9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmsy5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti7.pfb>
+Output written on paper379.pdf (8 pages, 870967 bytes).
+PDF statistics:
+ 1714 PDF objects out of 1728 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+

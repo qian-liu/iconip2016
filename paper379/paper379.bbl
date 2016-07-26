@@ -1,0 +1,79 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{buesing2011neural}
+Buesing, L., Bill, J., Nessler, B., Maass, W.: Neural dynamics as sampling: a
+  model for stochastic computation in recurrent networks of spiking neurons.
+  PLoS Comput Biol  7(11),  e1002211 (2011)
+
+\bibitem{cao2015spiking}
+Cao, Y., Chen, Y., Khosla, D.: Spiking deep convolutional neural networks for
+  energy-efficient object recognition. International Journal of Computer Vision
+   113(1),  54--66 (2015)
+
+\bibitem{davison2008pynn}
+Davison, A.P., Br{\"u}derle, D., Eppler, J., Kremkow, J., Muller, E., Pecevski,
+  D., Perrinet, L., Yger, P.: {PyNN: a common interface for neuronal network
+  simulators}. Frontiers in neuroinformatics  2 (2008)
+
+\bibitem{diehl2015fast}
+Diehl, P.U., Neil, D., Binas, J., Cook, M., Liu, S.C., Pfeiffer, M.:
+  Fast-classifying, high-accuracy spiking deep networks through weight and
+  threshold balancing. In: Neural Networks (IJCNN), International Joint
+  Conference on. IEEE (2015)
+
+\bibitem{diehl2016conversion}
+Diehl, P.U., Zarrella, G., Cassidy, A., Pedroni, B.U., Neftci, E.: Conversion
+  of artificial recurrent neural networks to spiking neural networks for
+  low-power neuromorphic hardware. arXiv preprint  (2016)
+
+\bibitem{furber2014spinnaker}
+Furber, S.B., Galluppi, F., Temple, S., Plana, L., et~al.: {The SpiNNaker
+  Project}. Proceedings of the IEEE  102(5),  652--665 (2014)
+
+\bibitem{glorot2011deep}
+Glorot, X., Bordes, A., Bengio, Y.: Deep sparse rectifier neural networks. In:
+  International Conference on Artificial Intelligence and Statistics. pp.
+  315--323 (2011)
+
+\bibitem{he2015delving}
+He, K., Zhang, X., Ren, S., Sun, J.: Delving deep into rectifiers: Surpassing
+  human-level performance on imagenet classification. In: Proceedings of the
+  IEEE International Conference on Computer Vision. pp. 1026--1034 (2015)
+
+\bibitem{hunsberger2015spiking}
+Hunsberger, E., Eliasmith, C.: {Spiking Deep Networks with LIF Neurons}. arXiv
+  preprint  (2015)
+
+\bibitem{Jug_etal_2012}
+Jug, F., Lengler, J., Krautz, C., Steger, A.: {Spiking networks and their
+  rate-based equivalents: does it make sense to use {S}iegert neurons?} In:
+  Swiss Soc. for Neuroscience (2012)
+
+\bibitem{liu2016bench}
+Liu, Q., Pineda-Garc\'ia\, Garibaldia nd~Stromatias, E., Serrano-Gotarredona,
+  T., Furber, S.: Benchmarking spike-based visual recognition: a dataset and
+  evaluation. Frontiers in Neuroscience (under review)  (2016)
+
+\bibitem{merolla2014million}
+Merolla, P.A., Arthur, J.V., Alvarez-Icaza, R., Cassidy, A.S., Sawada, J.,
+  Akopyan, F., Jackson, B.L., Imam, N., Guo, C., Nakamura, Y., et~al.: A
+  million spiking-neuron integrated circuit with a scalable communication
+  network and interface. Science  345(6197),  668--673 (2014)
+
+\bibitem{neftci2013event}
+Neftci, E., Das, S., Pedroni, B., Kreutz-Delgado, K., Cauwenberghs, G.:
+  Event-driven contrastive divergence for spiking neuromorphic systems.
+  Frontiers in neuroscience  7 (2013)
+
+\bibitem{o2016deep}
+O'Connor, P., Welling, M.: Deep spiking networks. arXiv preprint  (2016)
+
+\bibitem{Stromatias2015scalable}
+Stromatias, E., Neil, D., Galluppi, F., Pfeiffer, M., Liu, S.C., Furber, S.:
+  {Scalable energy-efficient, low-latency implementations of trained spiking
+  deep belief networks on SpiNNaker}. In: Neural Networks (IJCNN),
+  International Joint Conference on. IEEE (2015)
+
+\end{thebibliography}
